@@ -25,6 +25,9 @@ abstract class FeliCa {
   Uint8List get idm;
 
   // DOC:
+  Uint8List get pmm;
+
+  // DOC:
   Future<FeliCaPollingResponse> polling({
     required Uint8List systemCode,
     required FeliCaPollingRequestCode requestCode,
