@@ -75,7 +75,14 @@ abstract class FeliCa {
 final class FeliCaPollingResponse {
   // DOC:
   @visibleForTesting
-  const FeliCaPollingResponse({required this.pmm, required this.requestData});
+  const FeliCaPollingResponse({
+    required this.idm,
+    required this.pmm,
+    required this.requestData,
+  });
+
+  // DOC:
+  final Uint8List idm;
 
   // DOC:
   final Uint8List pmm;

@@ -36,6 +36,7 @@ final class FeliCaPlatformIos implements FeliCa {
         .then(
           // ignore: invalid_use_of_visible_for_testing_member
           (value) => FeliCaPollingResponse(
+            idm: _tech.currentIDm,
             pmm: value.manufacturerParameter,
             requestData: value.requestData,
           ),

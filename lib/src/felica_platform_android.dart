@@ -17,7 +17,7 @@ final class FeliCaPlatformAndroid implements FeliCa {
   Uint8List get systemCode => _tech.systemCode;
 
   @override
-  Uint8List get idm => _tech.manufacturer;
+  Uint8List get idm => _tech.currentIDm;
 
   @override
   Future<FeliCaPollingResponse> polling({
@@ -34,11 +34,11 @@ final class FeliCaPlatformAndroid implements FeliCa {
     ]);
     //final size = res[0];
     //final code = res[1];
-    //final idm = res.sublist(2, 10);
+    final idm = res.sublist(2, 10);
     final pmm = res.sublist(10, 18);
     final requestData = res.sublist(18);
     // ignore: invalid_use_of_visible_for_testing_member
-    return FeliCaPollingResponse(pmm: pmm, requestData: requestData);
+    return FeliCaPollingResponse(idm: idm, pmm: pmm, requestData: requestData);
   }
 
   @override
