@@ -20,6 +20,9 @@ final class FeliCaPlatformIos implements FeliCa {
   Uint8List get idm => _tech.currentIDm;
 
   @override
+  Uint8List get pmm => _tech.manufacturerParameter;
+
+  @override
   Future<FeliCaPollingResponse> polling({
     required Uint8List systemCode,
     required FeliCaPollingRequestCode requestCode,
